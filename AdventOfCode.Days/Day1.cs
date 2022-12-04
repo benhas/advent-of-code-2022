@@ -3,7 +3,7 @@ using StringSplitOptions = System.StringSplitOptions;
 
 namespace AdventOfCode.Days;
 
-public class Day1
+public static class Day1
 {
     public static int SumCalorieGroup(List<string> calorieGroup)
     {
@@ -14,53 +14,30 @@ public class Day1
         var calorieGroups = new List<List<string>>();
         
         var splitGroups = allGroups.Split("\n\n".ToCharArray());
-        var spaceCount = 0;
         var group = new List<string>();
-        var splitGroupLength = splitGroups.Length;
-        var elementNo = 0;
-        
+
         foreach (var element in splitGroups)
         {
-            elementNo++;
-
-            if (element.Equals(string.Empty))
+            if (!element.Equals(string.Empty))
             {
-                /*
-                spaceCount++;
-                if (spaceCount == 2)
-                {
-                    calorieGroups.Add(group);
-                    spaceCount = 0;
-                    group = new List<string>();
-                }
+                group.Add(element);
             }
             else
             {
-                group.Add(element);
-                spaceCount = 0;
-            }*/
                 calorieGroups.Add(group);
-                spaceCount = 0;
                 group = new List<string>();
             }
-            else
-            {
-                group.Add(element);
-            }
-
-           /* if (elementNo == splitGroupLength)
-                calorieGroups.Add(group);*/
         }
 
         return calorieGroups;
     }
 
-    public static int ReturnHighestCalorieGroup(List<int> calorieGroupCalories)
+    private static int ReturnHighestCalorieGroup(List<int> calorieGroupCalories)
     {
         return calorieGroupCalories.Max();
     }
-    
-    public static int ReturnSumTopThreeCalorieGroup(List<int> calorieGroupCalories)
+
+    private static int ReturnSumTopThreeCalorieGroup(List<int> calorieGroupCalories)
     {
         var sumTopThree = 0;
         var sortedList = calorieGroupCalories.OrderByDescending(p => p).ToList();
@@ -68,7 +45,7 @@ public class Day1
         {
             sumTopThree += sortedList[i];
         }
-
+        
         return sumTopThree;
     }
     
