@@ -1,0 +1,4 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=75ef41c0_002D2b32_002D4bdb_002D8a8d_002Ddc42865bdadb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;AdventOfCode.Tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Project Location="/Users/benmenesessosa/git/advent-of-code-2022/AdventOfCode.Tests" Presentation="&amp;lt;AdventOfCode.Tests&amp;gt;" /&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
