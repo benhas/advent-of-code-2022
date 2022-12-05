@@ -63,20 +63,19 @@ public class Lose : Result
 }
 public abstract class Shape
 {
+    protected const int ROCK = 1;
+    protected const int PAPER = 2;
+    protected const int SCISSORS = 3;
+    
+    protected const int LOSE = 0;
+    protected const int DRAW = 3;
+    protected const int WIN = 6;
     public abstract int Fight(Shape? shape);
     public abstract int FollowStrategy(Result? result);
 }
 
 public class Rock: Shape
 {
-    private const int ROCK = 1;
-    private const int PAPER = 2;
-    private const int SCISSORS = 3;
-    
-    private const int LOSE = 0;
-    private const int DRAW = 3;
-    private const int WIN = 6;
-
     public override int Fight(Shape? shape)
     {
         return ROCK + 
@@ -103,14 +102,6 @@ public class Rock: Shape
 
 public class Paper: Shape
 {
-    private const int ROCK = 1;
-    private const int PAPER = 2;
-    private const int SCISSORS = 3;
-    
-    private const int LOSE = 0;
-    private const int DRAW = 3;
-    private const int WIN = 6;
-
     public override int Fight(Shape? shape)
     {
         return PAPER +
@@ -137,14 +128,6 @@ public class Paper: Shape
 
 public class Scissors: Shape
 {
-    private const int ROCK = 1;
-    private const int PAPER = 2;
-    private const int SCISSORS = 3;
-    
-    private const int LOSE = 0;
-    private const int DRAW = 3;
-    private const int WIN = 6;
-
     public override int Fight(Shape? shape)
     {
         return SCISSORS +
@@ -159,7 +142,6 @@ public class Scissors: Shape
     
     public override int FollowStrategy(Result? result)
     {
-        
         return result?.GetType().Name.ToLower() switch
         {
             "lose" => LOSE + PAPER,
