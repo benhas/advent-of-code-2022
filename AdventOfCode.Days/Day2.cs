@@ -30,20 +30,16 @@ public static class Day2
     
     private static Shape? GetShape(string shape)
     {
-        switch (shape)
+        return shape switch
         {
-            case "X":
-            case "A":
-                return new Rock();
-            case "Y":
-            case "B":
-                return new Paper();
-            case "Z":
-            case "C":
-                return new Scissors();
-        }
-
-        return null;
+            "X" => new Rock(),
+            "A" => new Rock(),
+            "Y" => new Paper(),
+            "B" => new Paper(),
+            "Z" => new Scissors(),
+            "C" => new Scissors(),
+            _ => null
+        };
     }
     
     private static Result? GetResult(string result)
