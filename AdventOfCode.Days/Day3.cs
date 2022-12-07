@@ -38,7 +38,6 @@ public class Day3
 
     public static char GetCommonCharinGroup(List<string> groups)
     {
-         //groups[0].ToCharArray().All(currentChar => groups.Where(rucksack => rucksack != groups[0]).Any(rucksack => rucksack.ToCharArray().Contains(currentChar))
          var firstGroup = groups[0];
          var restOfGroups = groups.Skip(1).ToList();
 
