@@ -8,7 +8,8 @@ public class Day3
         var fileText = File.ReadAllText(fileLocation);
         var rucksacks = fileText.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
         var sumOfPriories = Days.Day3.GetSumOfPriorities(rucksacks);
-        
+        var sumOfCommonCharsInGroups = Days.Day3.GetSumOfCommonCharsInGroups(rucksacks);
         System.Console.WriteLine(sumOfPriories);
+        System.Console.WriteLine(sumOfCommonCharsInGroups);
     }
 }

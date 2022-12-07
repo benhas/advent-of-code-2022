@@ -22,4 +22,34 @@ public class Day3
     {
         return rucksacks.Sum(item => GetCommonCharPriority(FindCommonChar(item)));
     }
+    
+    public static List<List<string>> SplitInGroups(List<string> rucksacks, int groupSize = 3)
+    {
+        var groupedRucksacks = new List<List<string>>();
+        
+        for (var rucksackIndex = 0; rucksackIndex< rucksacks.Count; rucksackIndex+= groupSize)
+        {
+            var ruckSackGroup = new List<string>();
+            ruckSackGroup.AddRange(rucksacks.Skip(rucksackIndex).Take(groupSize));
+            groupedRucksacks.Add(ruckSackGroup);
+        }
+        return groupedRucksacks;
+    }
+
+    public static char GetCommonCharinGroup(List<string> groups)
+    {
+         //groups[0].ToCharArray().All(currentChar => groups.Where(rucksack => rucksack != groups[0]).Any(rucksack => rucksack.ToCharArray().Contains(currentChar))
+         var firstGroup = groups[0];
+         var restOfGroups = groups.Skip(1).ToList();
+
+         return firstGroup.ToCharArray()
+             .FirstOrDefault(currentChar => restOfGroups.All(x => x.IndexOf(currentChar) != -1));
+    }
+
+    public static int GetSumOfCommonCharsInGroups(List<string> rucksacks)
+    {
+        var rucksackGroups = SplitInGroups(rucksacks);
+
+        return rucksackGroups.Sum(group => GetCommonCharPriority(GetCommonCharinGroup(group)));
+    }
 }
