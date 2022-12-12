@@ -8,13 +8,10 @@ public static class Day4
         foreach (var assignmentPair in assignmentPairs)
         {
             var assignments = assignmentPair.Split(",".ToCharArray());
-            var instantiatedAssignmentPair = new List<Assignment>();
-            foreach (var assignment in assignments)
-            {
-                var splitAssignments = assignment.Split("-".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                instantiatedAssignmentPair.Add(
-                    new Assignment(int.Parse(splitAssignments[0]), int.Parse(splitAssignments[1])));
-            }
+            var instantiatedAssignmentPair = assignments
+                .Select(assignment => assignment.Split("-".ToCharArray(), StringSplitOptions.RemoveEmptyEntries))
+                .Select(splitAssignments =>
+                    new Assignment(int.Parse(splitAssignments[0]), int.Parse(splitAssignments[1]))).ToList();
             populatedAssignments.Add(instantiatedAssignmentPair);
         }
 
