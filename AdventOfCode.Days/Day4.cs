@@ -23,10 +23,7 @@ public static class Day4
         var sortedAssignments = populatedAssignments.OrderBy(x => x.Length);
         var firstAssignment = sortedAssignments.Take(1).First();
         var secondAssignment = sortedAssignments.Skip(1).Take(1).First();
-        return firstAssignment.Length == secondAssignment.Length
-            ? firstAssignment.LowerLimit == secondAssignment.LowerLimit &&
-              firstAssignment.UpperLimit == secondAssignment.UpperLimit
-            : firstAssignment.LowerLimit >= secondAssignment.LowerLimit &&
+        return firstAssignment.LowerLimit >= secondAssignment.LowerLimit &&
               firstAssignment.UpperLimit <= secondAssignment.UpperLimit;
     }
 
