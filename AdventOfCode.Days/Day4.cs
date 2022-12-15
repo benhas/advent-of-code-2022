@@ -23,10 +23,7 @@ public static class Day4
         var sortedAssignments = populatedAssignments.OrderBy(x => x.Length);
         var firstAssignment = sortedAssignments.Take(1).First();
         var secondAssignment = sortedAssignments.Skip(1).Take(1).First();
-        return firstAssignment.Length == secondAssignment.Length
-            ? firstAssignment.LowerLimit == secondAssignment.LowerLimit &&
-              firstAssignment.UpperLimit == secondAssignment.UpperLimit
-            : firstAssignment.LowerLimit >= secondAssignment.LowerLimit &&
+        return firstAssignment.LowerLimit >= secondAssignment.LowerLimit &&
               firstAssignment.UpperLimit <= secondAssignment.UpperLimit;
     }
 
@@ -36,6 +33,23 @@ public static class Day4
 
         return populatedAssignments.Count(OverlappingAssignments);
     }
+    
+    public static bool AnyOverlappingAssignments(IEnumerable<Assignment> populatedAssignments)
+    {
+        var sortedAssignments = populatedAssignments.OrderBy(x => x.LowerLimit);
+        var firstAssignment = sortedAssignments.Take(1).First();
+        var secondAssignment = sortedAssignments.Skip(1).Take(1).First();
+        
+        return !(firstAssignment.UpperLimit < secondAssignment.LowerLimit);
+    }
+
+    public static int TotalAnyOverlappingAssignments(IEnumerable<string> assignments)
+    {
+        var populatedAssignments = PopulateAssignments(assignments.ToList());
+
+        return populatedAssignments.Count(AnyOverlappingAssignments);
+    }
+    
 }
 public class Assignment
 {

@@ -8,6 +8,8 @@ public class Day4
         var fileText = File.ReadAllText(fileLocation);
         var assignments = fileText.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         var overlappingAssignments = Days.Day4.TotalOverlappingAssignments(assignments.ToList());
+        var anyOverlappingAssignments = Days.Day4.TotalAnyOverlappingAssignments(assignments.ToList());
         System.Console.WriteLine(overlappingAssignments);
+        System.Console.WriteLine(anyOverlappingAssignments);
     }
 }
