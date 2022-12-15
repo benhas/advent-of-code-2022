@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-        <StartupObject>AdventOfCode.Console.Day4</StartupObject>
+        <StartupObject>AdventOfCode.Console.Day5</StartupObject>
     </PropertyGroup>
 
     <ItemGroup>

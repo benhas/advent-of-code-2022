@@ -3,5 +3,8 @@
   &lt;Project Location="/Users/benmenesessosa/git/advent-of-code-2022/AdventOfCode.Tests" Presentation="&amp;lt;AdventOfCode.Tests&amp;gt;" /&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d317528a_002D850d_002D4277_002Da2f0_002Dc7b5d408e4ed/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AnyOverlappingAssignments_listOfAssignments_AreAssignmentsOverlapping" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;ProjectFile&gt;190A6A8E-93AB-4A98-99AE-5198492EB42D/f:Day4.cs&lt;/ProjectFile&gt;
+  &lt;Or&gt;
+    &lt;ProjectFile&gt;190A6A8E-93AB-4A98-99AE-5198492EB42D/f:Day4.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;190A6A8E-93AB-4A98-99AE-5198492EB42D/f:Day5.cs&lt;/ProjectFile&gt;
+  &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
